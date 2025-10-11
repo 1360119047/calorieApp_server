@@ -338,9 +338,13 @@ def update_calorie_data():
                 met() if net_cals >= int(goal["target"]) else not_met()
 
             else:
-                met() if int(goal["target"]) - 300 <= net_cals <= int(
-                    goal["target"]
-                ) + 300 else not_met()
+                (
+                    met()
+                    if int(goal["target"]) - 300
+                    <= net_cals
+                    <= int(goal["target"]) + 300
+                    else not_met()
+                )
 
             current_streak = goal["current_streak"]
 
